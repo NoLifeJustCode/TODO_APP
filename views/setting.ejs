@@ -1,0 +1,54 @@
+<html>
+    <head><title><%=links.title%></title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/home.css">
+    </head>
+    <body class="<%=color_pallete.main_bg%>">
+        <aside class="<%=color_pallete.task_bg%>">
+            <div class="container">
+                <ul>
+                    <li><a class="<%=color_pallete.color_font%>" href="<%=links.Home%>">Home</a></li>
+                    <li><a class="<%=color_pallete.color_font%>" href="<%=links.all_tasks%>">All Tasks</a></li>
+                    
+                    <li><a class="<%=color_pallete.color_font%>" href="<%=links.completed_tasks%>">completed Tasks</a></li>
+                    <li><a class="<%=color_pallete.color_font%>" href="<%=links.setting%>">Setting</a></li>
+                </ul>
+            </div>
+        </aside>
+        <main>
+            <form id="settingForm" action="/setting" style="width:fit-content" method="POST" class="<%=color_pallete.color_font%>">
+                <div class="settingOption">
+                    <label for="dark_mode">Dark mode:</label>
+                    <label class="switch">
+                        <% if (setting.dark_mode) { %>
+                        <input id="dark_mode" type="checkbox" name="dark_mode"  checked >
+                        <%}else{%>
+                        
+                        <input id="dark_mode" type="checkbox" name="dark_mode"   >
+                        <%}%>
+                        <span class="slider round"></span>
+                      </label>
+                      
+                </div>
+                <div class="settingOption">
+                <h5 >Preset Time:</h5>
+               
+                <input name="Time_offset" id ="offset" type='checkbox'><label for="offset">offset</label><span class="hint"><button class="hint">i</button><p class="hint blackFont">it offsets the current time by said hrs</p><br></span>
+                <label for="">Time : </label><input name="time" type="time" value="<%=setting.Time%>"style="width: 61px;font-size: 10px; padding: 0px;margin: 0px;">
+                </div>
+                <div class="settingOption">
+                    <h5 >Preset Date:</h5>
+                    <input name="Date_offset" id ="offset" type='checkbox'><label for="offset">offset</label><span class="hint"><button class="hint">i</button><p class="hint blackFont">it offsets the current Day by said days</p></span><br>
+                    <label for="">Day : </label><input name="Date" type="number" max="31" value="<%=setting.Date%>" style="width: 50px;font-size: 10px;margin: 5px;">
+                </div>
+                <button type="submit" style="float: right;">Save</button>
+                   
+            </form>
+        </main>
+        <script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+              <script src="/js/home.js"></script>
+        </body>
+</html>

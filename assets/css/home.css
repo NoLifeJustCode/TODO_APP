@@ -1,0 +1,254 @@
+body{
+    margin: 0px;
+    background-color: teal;
+}
+.greenBg{
+    background-color: #39dacf;
+}
+.green{
+    color:#39dacf;
+}
+.red{
+    background-image: linear-gradient(red,yellow);
+    background-clip: text;
+    color:transparent;
+}
+.rainbow {
+
+    background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, red), color-stop(0.3, yellow), color-stop(0.45, red), color-stop(0.6, yellow),color-stop(0.75, red), color-stop(0.9, red), color-stop(1, red) );
+    background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, red), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+    color:transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    
+  }
+.Tasks{
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom:2px solid #eaeef2;
+    padding:10px;
+    margin-left:-4px;
+    background-color: #006565;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5vw;
+}
+.title{
+    display: inline-block; 
+    width: 80%; 
+    margin: 0px; 
+    /* margin-left: 5%; */
+}
+.labels{
+    margin-top:5px;
+    /* margin-left: 5%; */
+}
+.labels label{
+    margin-left:5px;
+}
+.options a{
+    color: black;
+}
+.drpdwn{
+    width: auto;
+    position: relative;
+    margin: 10px;
+    margin-left: 0;
+    padding: 0;
+}
+.drpdwnContent{
+    position: relative;
+    width: fit-content;
+    margin: 0;
+    padding:0;
+}
+
+.drpdwnContent li{
+    list-style: none;
+    position: relative;
+    background-color: #f1f1f1;
+    padding:10px;
+    margin: 0;
+}
+.drpdwnContent li:hover{
+    background-color: grey;
+}
+.drpdwn a{
+    text-decoration: none;
+    color:black;
+    background-color: #f1f1f1;
+    font-size: 1.5em;
+    padding:10px;
+}
+.drpdwnContent i{
+    font-size: 1.5em;
+    margin: 0;
+    padding:0;
+    float: right;
+    position: relative;
+    top: -3px;
+    margin-left:5px;
+}
+
+.hide{
+    display: none;
+}
+
+main{
+    margin: 0px;
+    display: inline-block;
+    background-color: transparent;
+    width: 90%;
+
+}
+aside{
+    display: inline-block;
+    vertical-align: top;
+    margin: 0;
+    padding:0px;
+    height: 100%;
+    background-color: #027873;
+    width:9%;
+}
+.container{
+    margin: 0px;
+    padding:0px;
+    width: 100%;
+}
+.container ul{
+    margin: 0;
+    padding:0;
+}
+.container li{
+    list-style: none;
+    width: auto;
+    background-color:transparent;
+    padding: 5px;
+}
+.container li:hover{
+    background-color: grey;
+}
+li a{
+    
+    text-decoration: none;
+    color:black;
+    font-size: 1vw;
+}
+form  input{
+    
+    margin-bottom: 10px;
+   padding: 5px;
+
+}
+.complete{
+    display: none;
+}
+.settingOption{
+    padding: 0;
+    margin: 10px;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 17px;
+    vertical-align: top;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+    
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: teal;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 13px;
+    width: 13px;
+    left: 1px;
+    bottom: 1px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: black;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px black;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(13px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border:1px solid silver;  
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  p.hint{
+    display: inline-block;
+    background-color: white;
+    margin:0;
+    padding:2px;
+    visibility: hidden;
+  }
+  button.hint{
+    font-size: 10px; 
+    margin: 5px;
+  }
+  span.hint:hover p.hint{
+      visibility:visible;
+  }
+  .blackBg{
+    background-color: black;
+  }
+  .violetBg{
+      background-color: #143048;
+  }
+  .teal{
+      background-color: teal;
+  }
+  .teal_task{
+    background-color: #006565;
+  }
+  .whiteFont{
+      color:white;
+  }
+  .blackFont{
+      color:black;
+  }
+  .completed_task{
+      /* position: absolute; */
+      display: inline-block;
+      background-color: white;
+      color: black;
+      transform: rotateZ(-45deg) translateX(-20px);
+      transition: transform 1s;
+      font-size: 0.8em;
+    
+  }

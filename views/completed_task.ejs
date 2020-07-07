@@ -1,0 +1,44 @@
+<html>
+    <head><title><%=links.title%></title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/home.css">
+    </head>
+    <body class="<%=color_pallete.main_bg%>">
+        <aside class="<%=color_pallete.task_bg%>">
+            <div class="container">
+                <ul>
+                    <li><a class="<%=color_pallete.color_font%>" href="<%=links.Home%>">Home</a></li>
+                    <li><a class="<%=color_pallete.color_font%>" href="<%=links.all_tasks%>">All Tasks</a></li>
+                    
+                    <li><a class="<%=color_pallete.color_font%>" href="<%=links.completed_tasks%>">completed Tasks</a></li>
+                    <li><a class="<%=color_pallete.color_font%>" href="<%=links.setting%>">Setting</a></li>
+                </ul>
+            </div>
+        </aside>
+    <main>
+        <h1 style="color:white">Completed Tasks : <b style="color:black"> <%=task.length%></b> </h1>
+        <%for(var i of task){%>
+            <% var date=new Date(i.Due_Date)%>
+            <%const due=date.getDate()+'-'+(date.getMonth()+1)+'-'+date.getFullYear()%>
+        <div class="Tasks <%=color_pallete.task_bg%>">
+            
+            <p style="display: inline-block; width: 90%; margin: 0px;"><span class="rainbow"><%=priority_symbol[i.priority]%>&ThickSpace;</span><%=i.task_desc%></p>
+            <div class="options" style="display:inline-block;position: relative;margin:auto; clear: left;">
+                <a style="position: relative;margin-left:10px ;" href="/delete/<%=i._id%>"><i class="fas fa-trash"></i></a>
+                <!-- <a style="position: relative;margin-left: 10px;" href="/modify/<%=i._id%>"><i class="fas fa-check complete"></i></a>-->
+                <div class="completed_task" style="display: inline-block; ;background-color: white;color: black;">
+                    <p style="margin: 0;">Completed</p>
+                </div>
+            </div> 
+            <div class="labels">
+                <label for=""><%=due%></label>
+                <label><%=i.Time%></label>
+            </div>
+        </div>
+            <%}%>
+    </div>
+    </main>
+   
+        <!-- <script src="/js/home.js"></script> -->
+</body>
+</html>

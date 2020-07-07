@@ -1,0 +1,59 @@
+<html>
+    <head><title><%=links.title%></title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/home.css">
+    </head>
+    <body class="<%=color_pallete.main_bg%>">
+        <aside class="<%=color_pallete.task_bg%>">
+            <div class="container">
+                <ul>
+                    <li><a class="<%=color_pallete.color_font%>" href="<%=links.Home%>">Home</a></li>
+                    <li><a class="<%=color_pallete.color_font%>" href="<%=links.all_tasks%>">All Tasks</a></li>
+                    
+                    <li><a class="<%=color_pallete.color_font%>" href="<%=links.completed_tasks%>">completed Tasks</a></li>
+                    <li><a class="<%=color_pallete.color_font%>" href="<%=links.setting%>">Setting</a></li>
+                </ul>
+            </div>
+        </aside>
+        <main >
+            <div style="width: fit-content;padding:1%;padding-bottom: 5%;">
+
+                <h2 class="<%=color_pallete.color_font%>">Add Task</h2>
+        <form style="width: fit-content;" id="addTaskForm" >
+            <input name ="Title" placeholder="Title" style="width: 100%;" id="Title"><br>
+            <input id="Date" name="Date" type="Date" value="">
+            <input id="time" name="Time" type="time">
+             <div class="drpdwn">
+                
+                <ul class="drpdwnContent">
+                    <li class="hide" name="priority" value="low"><span class="rainbow">!</span>&nbsp;low priority<i class="fas fa-caret-down"></i></li>
+                    <li class=" " value="medium"><span class="rainbow">!!</span>&nbsp;Medium priority<i class="fas fa-caret-down"></i></li>
+                    <li class="hide" value="high"><span class='rainbow'>!!!</span>&nbsp;High priority<i class="fas fa-caret-down"></i></li>
+                </ul>
+            </div> 
+            
+            <button id ="addTask" type="submit" style="float: right;" >Submit</button>
+        </form>
+        </div>
+        <%for(var i of task){%>
+        <div class="Tasks <%=color_pallete.task_bg%>">
+                
+                <p class="title"><span class="rainbow"><%=priority_symbol[i.priority]%>&ThickSpace;</span><%=i.task_desc%></p>
+                <div class="options" style="display:inline-block;position: relative;margin:auto; clear: left;">
+                    <a style="position: relative;margin-left:10px ;" href="/delete/<%=i._id%>"><i class="fas fa-trash"></i></a>
+                    <a style="position: relative;margin-left: 10px;" href="/modify/<%=i._id%>"><i class="fas fa-check "></i></a></div>
+                <div class="labels">
+                    <!-- <label for=""><%=i.priority%></label> -->
+                    <label><%=i.Time%></label>
+                </div>
+                
+        </div>
+        <%}%>
+        
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+        <script src="/js/home.js"></script>
+    </body>
+</html>
